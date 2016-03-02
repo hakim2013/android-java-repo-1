@@ -101,7 +101,7 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
             if (constraint != null && constraint.length() > 0) {
                 for (int i = 0; i < mFilterList.size(); i++) {
                     book = mFilterList.get(i);
-           // Utiliser le titre  comme filtre
+           // Utiliser le titre et l'éditeur  comme filtre
                     if ((book.getTitle().toUpperCase().contains(constraint.toString().toUpperCase()))
                             || (book.getEditor().toUpperCase().contains(constraint.toString().toUpperCase()))) {
                         listFilter.add(book);
