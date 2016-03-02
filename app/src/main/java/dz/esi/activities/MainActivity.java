@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         book.setYear("2012");
         book.setSummary(listSummary[2]);
         bookList.add(book);
-        // le 4eme livre
+        // le 4ème livre
         book = new Book();
         book.setTitle("Android UI Fundamentals: Develop & Design");
         authors = new ArrayList();
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         book.setYear("2012");
         book.setSummary(listSummary[3]);
         bookList.add(book);
-        // le 5eme livre
+        // le 5ème livre
         book = new Book();
         book.setTitle("Programming in Objective-C");
         authors = new ArrayList();
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         book.setYear("2012");
         book.setSummary(listSummary[4]);
         bookList.add(book);
-        // le 6eme livre
+        // le 6 ème livre
         book = new Book();
         book.setTitle("Learning Agile");
         authors = new ArrayList();
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         book.setYear("2014");
         book.setSummary(listSummary[5]);
         bookList.add(book);
-        // le 7 eme livre
+        // le 7 ème livre
         book = new Book();
         book.setTitle("Learning the UNIX Operating System");
         authors = new ArrayList();
