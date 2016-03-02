@@ -56,7 +56,7 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
         TextView textAuthors = (TextView) convertView.findViewById(R.id.authors);
         TextView textEditor = (TextView) convertView.findViewById(R.id.editor);
         coverIcon.setImageResource(bookList.get(position).getIconCover());
-        textTitle.setText("Titre: " + bookList.get(position).getTitle());
+        textTitle.setText(bookList.get(position).getTitle());
         // Récupérer la liste des auteurs
         List<String> bookAuthors = bookList.get(position).getAuthors();
         // Séparer la liste des auteurs par une virgule
@@ -67,7 +67,7 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
                 authors = authors + ", " + bookAuthors.get(i);
             }
         }
-        textAuthors.setText("Auteurs: " + authors);
+        textAuthors.setText("Auteurs: "+ authors);
         textEditor.setText("Editeur: " + bookList.get(position).getEditor());
         return convertView;
     }
