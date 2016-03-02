@@ -22,6 +22,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView textTitle = (TextView) findViewById(R.id.textTitle);
         TextView textEditor = (TextView) findViewById(R.id.editorText);
         TextView textAuthor = (TextView) findViewById(R.id.textAuthor);
+        TextView textAuthorLabel = (TextView) findViewById(R.id.textView5);
         coverImage.setImageResource(book.getCover());
         textSummary.setText(book.getSummary());
         textTitle.setText(book.getTitle());
@@ -29,6 +30,7 @@ public class DetailActivity extends AppCompatActivity {
         textEditor.setText(book.getEditor());
         textAuthor.setText(book.getAuthors().get(0));
         if(book.getAuthors().size()>1) {
+            textAuthorLabel.setText("Auteurs: ");
             for(int i=1;i<book.getAuthors().size();i++) {
                 textAuthor.setText(textAuthor.getText()+", "+book.getAuthors().get(i));
             }

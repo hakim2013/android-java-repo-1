@@ -66,8 +66,11 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
             for (int i = 1; i < listSize; i++) {
                 authors = authors + ", " + bookAuthors.get(i);
             }
+            textAuthors.setText("Auteurs: "+ authors);
         }
-        textAuthors.setText("Auteurs: "+ authors);
+        else {
+            textAuthors.setText("Auteur: "+ authors);
+        }
         textEditor.setText("Editeur: " + bookList.get(position).getEditor());
         return convertView;
     }

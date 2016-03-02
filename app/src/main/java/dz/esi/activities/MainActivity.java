@@ -109,6 +109,45 @@ public class MainActivity extends AppCompatActivity {
         book.setYear("2012");
         book.setSummary(listSummary[3]);
         bookList.add(book);
+        // le 5eme livre
+        book = new Book();
+        book.setTitle("Programming in Objective-C");
+        authors = new ArrayList();
+        authors.add("Stephen Kochan");
+        book.setAuthors(authors);
+        book.setEditor("Developer's Library");
+        book.setIconCover(R.drawable.ic_objectivec);
+        book.setCover(R.drawable.ic_objectivecover);
+        book.setYear("2012");
+        book.setSummary(listSummary[4]);
+        bookList.add(book);
+        // le 6eme livre
+        book = new Book();
+        book.setTitle("Learning Agile");
+        authors = new ArrayList();
+        authors.add("Andrew Stellman");
+        authors.add("Jennifer Greene");
+        book.setAuthors(authors);
+        book.setEditor("Kindle Edition");
+        book.setIconCover(R.drawable.ic_agile);
+        book.setCover(R.drawable.ic_agilecovrer);
+        book.setYear("2014");
+        book.setSummary(listSummary[5]);
+        bookList.add(book);
+        // le 7 eme livre
+        book = new Book();
+        book.setTitle("Learning the UNIX Operating System");
+        authors = new ArrayList();
+        authors.add("Jerry Peek");
+        authors.add("Grace T-Gonguet");
+        authors.add("John Strang");
+        book.setAuthors(authors);
+        book.setEditor("O'Reilly Media, Inc.");
+        book.setIconCover(R.drawable.ic_unixicon);
+        book.setCover(R.drawable.ic_unixicover);
+        book.setYear("2002");
+        book.setSummary(listSummary[6]);
+        bookList.add(book);
         return bookList;
 
 
