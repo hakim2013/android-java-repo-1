@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        // implémenter le filtre
         SearchView searchView = (SearchView) findViewById(R.id.searchView);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // insérer des livres
 
-
-    private List<Book> getBookList() {
+    public List<Book> getBookList() {
         String[] listSummary = getResources().getStringArray(R.array.summary);
         List<Book> bookList = new ArrayList<Book>();
         // le 1er livre
@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         bookList.add(book);
         // le 2eme livre
         book = new Book();
-        book.setTitle("UML 2.0 in a Nutshell");
+        //book.setTitle("UML 2.0 in a Nutshell");
+        book.setTitle("UML 2.0 in a Nutshell UML 2.0");
         authors = new ArrayList();
         authors.add("Dan Pilone");
         authors.add("Neil Pitman");

@@ -5,6 +5,7 @@ import java.util.List;
 
 
 public class Book implements Serializable{
+
     private String title ;
     private List<String> authors;
     private String editor;
