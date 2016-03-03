@@ -85,7 +85,7 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
     }
 
     // Une nouvelle classe de type Filter est définie
-    // Quand on appel on va instancier ValueFilter, deuw méthodes sont appelées :  : performFiltering et publishResults
+    // Quand on va instancier ValueFilter, deux méthodes sont appelées :  : performFiltering et publishResults
 
     private class ValueFilter extends Filter {
 
@@ -97,6 +97,7 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
             Book book;
             List<Book> listFilter = new ArrayList<Book>();
             FilterResults filterResults = new FilterResults();
+            // véirifer si le texte n'est pas vide
             if (constraint != null && constraint.length() > 0) {
                 for (int i = 0; i < mFilterList.size(); i++) {
                     book = mFilterList.get(i);
