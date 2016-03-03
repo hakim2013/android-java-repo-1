@@ -85,10 +85,12 @@ public class CutomAdapter extends BaseAdapter implements Filterable {
     }
 
     // Une nouvelle classe de type Filter est définie
+    // Quand on appel on va instancier ValueFilter, deuw méthodes sont appelées :
+
     private class ValueFilter extends Filter {
 
-        // cette méthode effecute le filtre sur la liste des livre
-        // une copie de cette liste mFilterList est utilisée
+        // cette méthode effecute le filtre sur la liste des livres
+        // une copie de cette liste mFilterList est utilisée : performFiltering et publishResults
 
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
