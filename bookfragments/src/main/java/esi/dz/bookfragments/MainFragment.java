@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
  */
 public class MainFragment extends Fragment {
     CutomAdapter cutomAdapter ;
+    ListView  listView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -22,8 +25,11 @@ public class MainFragment extends Fragment {
         ListView listView = (ListView) v.findViewById(R.id.listView);
         cutomAdapter = new CutomAdapter(getActivity(),getBookList());
         listView.setAdapter(cutomAdapter);
+
         return v;
     }
+
+
 
     public List<Book> getBookList() {
         String[] listSummary = getResources().getStringArray(R.array.summary);
@@ -119,7 +125,7 @@ public class MainFragment extends Fragment {
         book.setSummary(listSummary[6]);
         bookList.add(book);
         return bookList;
-
-
     }
+
+
 }
