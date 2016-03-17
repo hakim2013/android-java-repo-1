@@ -1,1 +1,1 @@
-include ':app', ':fragmentsimplemodule'
+include ':app', ':bookfragments', ':booktabnav', ':booksearchtitle'
