@@ -1,6 +1,9 @@
 package esi.dz.bookfragments;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,12 +13,12 @@ import java.util.List;
 
 
 
-public class CutomAdapter extends BaseAdapter  {
+public class CustomAdapter extends BaseAdapter  {
     private Context context;
     private List<Book> bookList;
 
 
-    public CutomAdapter(Context context, List<Book> bookList) {
+    public CustomAdapter(Context context, List<Book> bookList) {
         this.context = context;
         this.bookList = bookList;
     }
@@ -45,23 +48,27 @@ public class CutomAdapter extends BaseAdapter  {
         TextView textTitle = (TextView) convertView.findViewById(R.id.title);
         TextView textAuthors = (TextView) convertView.findViewById(R.id.authors);
         TextView textEditor = (TextView) convertView.findViewById(R.id.editor);
-        coverIcon.setImageResource(bookList.get(position).getIconCover());
+        coverIcon.setImageBitmap(getImageByte(bookList.get(position).getIconCover()));
         textTitle.setText(bookList.get(position).getTitle());
         // Récupérer la liste des auteurs
-        List<String> bookAuthors = bookList.get(position).getAuthors();
+        Author[] bookAuthors = bookList.get(position).getListAuthors();
         // Séparer la liste des auteurs par une virgule
-        String authors = bookAuthors.get(0);
-        int listSize = bookAuthors.size();
-        if (listSize > 1) {
-            for (int i = 1; i < listSize; i++) {
-                authors = authors + ", " + bookAuthors.get(i);
-            }
-            textAuthors.setText("Auteur(s): "+ authors);
+        String authors = bookAuthors[0].getFirstName()+" "+bookAuthors[0].getLastName();
+        int tabLenght = bookAuthors.length;
+            for (int i = 1; i < tabLenght; i++) {
+                authors = authors + ", " + bookAuthors[i].getFirstName()+" "+bookAuthors[i].getLastName();
         }
+        textAuthors.setText("Auteur(s): "+ authors);
         textEditor.setText("Editeur: " + bookList.get(position).getEditor());
 
         return convertView;
     }
 
+    public Bitmap getImageByte(String  image) {
+        byte[] imgbytes = Base64.decode(image, Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
+                imgbytes.length);
+        return bitmap;
+    }
 
 }

@@ -1,8 +1,11 @@
 package esi.dz.bookfragments;
 
 import android.app.Fragment;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,13 +34,29 @@ public class DetailFragment extends Fragment {
             TextView textEditor = (TextView) v.findViewById(R.id.editorText);
             TextView textAuthor = (TextView) v.findViewById(R.id.textAuthor);
             ((TextView) v.findViewById(R.id.textView)).setVisibility(v.VISIBLE);
-            coverImage.setImageResource(book.getCover());
+            coverImage.setImageBitmap(getImageByte(book.getCover()));
             textSummary.setText(book.getSummary());
             textTitle.setText("Titre: "+book.getTitle());
             textYear.setText("Année d'édition: "+book.getYear());
             textEditor.setText("Editeur: "+book.getEditor());
-            textAuthor.setText("Auteur(s): "+book.getAuthors().get(0));
+            Author[] authors = book.getListAuthors();
+            //Affichage auteurs
+            String authorsName = authors[0].getFirstName()
+                    +" " +authors[0].getLastName();
+            for (int i = 1; i < authors.length; i++) {
+                authorsName= authorsName+","+
+                        authors[i].getFirstName()+" "
+                        +authors[i].getLastName();
+            }
+            textAuthor.setText("Auteur(s): "+authorsName);
         }
         return v;
+    }
+
+    public Bitmap getImageByte(String  image) {
+        byte[] imgbytes = Base64.decode(image, Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
+                imgbytes.length);
+        return bitmap;
     }
 }

@@ -1,18 +1,28 @@
 package esi.dz.bookfragments;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 import java.util.List;
 
 
 public class Book implements Serializable{
-
+    private int isbn;
     private String title ;
-    private List<String> authors;
+    private Author[] listAuthors;
     private String editor;
     private String year;
     private  String summary;
-    private int cover ;
-    private int iconCover;
+    private String cover ;
+    private String iconCover;
+
+    public int getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
+    }
 
     public String getTitle() {
         return title;
@@ -22,12 +32,20 @@ public class Book implements Serializable{
         this.title = title;
     }
 
-    public List<String> getAuthors() {
-        return authors;
+    public Author[] getListAuthors() {
+        return listAuthors;
     }
 
-    public void setAuthors(List<String> authors) {
-        this.authors = authors;
+    public void setListAuthors(Author[] listAuthors) {
+        this.listAuthors = listAuthors;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public void setIconCover(String iconCover) {
+        this.iconCover = iconCover;
     }
 
     public String getEditor() {
@@ -54,20 +72,12 @@ public class Book implements Serializable{
         this.summary = summary;
     }
 
-    public int getCover() {
+    public String getCover() {
         return cover;
     }
 
-    public void setCover(int cover) {
-        this.cover = cover;
-    }
-
-    public int getIconCover() {
+    public String getIconCover() {
         return iconCover;
-    }
-
-    public void setIconCover(int iconCover) {
-        this.iconCover = iconCover;
     }
 }
 
