@@ -14,9 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by pc on 04/03/2016.
- */
+
 public class MainFragment extends Fragment {
 
     @Override

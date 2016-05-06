@@ -2,9 +2,7 @@ package esi.dz.bookfragments;
 
 import java.io.Serializable;
 
-/**
- * Created by pc on 06/05/2016.
- */
+
 public class Author implements Serializable {
 
     private String firstName;

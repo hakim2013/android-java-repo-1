@@ -13,9 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by pc on 04/03/2016.
- */
+
 public class DetailFragment extends Fragment {
 
 

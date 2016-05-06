@@ -26,9 +26,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by pc on 06/05/2016.
- */
+
 public class GetBookTask extends AsyncTask<String,Void,String> {
     private Context context;
     ProgressDialog pg;
