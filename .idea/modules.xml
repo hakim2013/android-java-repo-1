@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TDM.iml" filepath="$PROJECT_DIR$/TDM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TDM_2016.iml" filepath="$PROJECT_DIR$/TDM_2016.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookFragmentBackend/bookFragmentBackend.iml" filepath="$PROJECT_DIR$/bookFragmentBackend/bookFragmentBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookfragments/bookfragments.iml" filepath="$PROJECT_DIR$/bookfragments/bookfragments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/booksearchtitle/booksearchtitle.iml" filepath="$PROJECT_DIR$/booksearchtitle/booksearchtitle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/booktabnav/booktabnav.iml" filepath="$PROJECT_DIR$/booktabnav/booktabnav.iml" />
     </modules>
   </component>
 </project>

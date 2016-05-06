@@ -1,1 +1,1 @@
-include ':app', ':bookfragments', ':booktabnav', ':booksearchtitle'
+include ':app', ':bookfragments', ':booktabnav', ':booksearchtitle', ':bookFragmentBackend'
