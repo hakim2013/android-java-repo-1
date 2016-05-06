@@ -13,9 +13,7 @@ import java.util.List;
 import dz.esi.backend.model.Author;
 import dz.esi.backend.model.Book;
 
-/**
- * Created by pc on 05/05/2016.
- */
+
 public class DataBaseService {
 
     public static final String className = "com.mysql.jdbc.Driver";

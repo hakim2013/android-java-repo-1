@@ -1,8 +1,6 @@
 package dz.esi.backend.model;
 
-/**
- * Created by pc on 06/05/2016.
- */
+
 public class Author {
     private String firstName;
     private String lastName;

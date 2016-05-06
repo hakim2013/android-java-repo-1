@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dz.esi.backend.database.DataBaseService;
 import dz.esi.backend.model.Book;
 
-/**
- * Created by pc on 06/05/2016.
- */
+
 public class GetBooksServlet extends HttpServlet {
 
     @Override
