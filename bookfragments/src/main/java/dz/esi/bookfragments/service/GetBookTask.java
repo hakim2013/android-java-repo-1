@@ -100,7 +100,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
             listView.setAdapter(cutomAdapter);
         }
         else {
-            Toast.makeText(context, "une erreure s'est produite", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "une erreur s'est produite", Toast.LENGTH_SHORT).show();
         }
     }
 
