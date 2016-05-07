@@ -26,7 +26,7 @@ public class UtilService {
     public boolean checkNetwork(Context ctx) {
         ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo= cm.getActiveNetworkInfo();
-        /*utilisé ces tests pour tester les types des connexions
+        /*utiliser ces tests pour tester les types des connexions
         if networkInfo.getType()==ConnectivityManager.TYPE_WIFI
        /if networkInfo.getType()==ConnectivityManager.TYPE_MOBILE
        */
