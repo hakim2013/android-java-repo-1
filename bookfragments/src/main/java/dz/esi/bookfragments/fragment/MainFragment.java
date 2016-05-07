@@ -19,6 +19,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.main_fragment,null);
         // tester si le dispositif est connecté
+        // ne pas effecuter ce test si le serveur est connecté au point d'acces du dispositif
         if(new UtilService().checkNetwork(getActivity())) {
             new GetBookTask(getActivity()).execute(getScreenDensity());
         }
