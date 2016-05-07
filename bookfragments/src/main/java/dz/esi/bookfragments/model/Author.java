@@ -1,4 +1,4 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.model;
 
 import java.io.Serializable;
 

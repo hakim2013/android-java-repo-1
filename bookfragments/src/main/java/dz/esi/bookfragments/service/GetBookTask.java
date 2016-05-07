@@ -1,15 +1,10 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.service;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Base64;
-import android.view.View;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -26,10 +21,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import dz.esi.bookfragments.R;
+import dz.esi.bookfragments.adapter.CustomAdapter;
+import dz.esi.bookfragments.model.Author;
+import dz.esi.bookfragments.model.Book;
+
 
 public class GetBookTask extends AsyncTask<String,Void,String> {
     private Context context;
-    ProgressDialog pg;
+    ProgressDialog pd;
 
 
     public GetBookTask(Context context) {
@@ -38,9 +38,10 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPreExecute() {
-       pg = new ProgressDialog(context);
-        pg.setTitle("En cours");
-        pg.show();
+        pd = new ProgressDialog(context);
+        pd.setTitle("Please Wait..");
+        pd.setMessage("Loading...");
+        pd.show();
     }
 
     @Override
@@ -48,9 +49,11 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
         StringBuilder result = new StringBuilder();
         String data;
         try {
-            URL url = new URL("http://192.168.1.6:8080/getbooks?density="+params[0]);
+            URL url = new URL("http://192.168.1.4:8080/getbooks?density="+params[0]);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            // Attendre 5 secondes pour établir la connexion
             conn.setConnectTimeout(5000);
+            // Aattendre 1 minute pour lire les données
             conn.setReadTimeout(60000);
             if (conn.getResponseCode()==200) {
                 InputStream is = conn.getInputStream();
@@ -67,7 +70,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String s) {
-      pg.cancel();
+      pd.dismiss();
         if (!s.equals("")) {
             List<Book> listBook = new ArrayList<>();
 
@@ -97,7 +100,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
             listView.setAdapter(cutomAdapter);
         }
         else {
-            Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "une erreure s'est produite", Toast.LENGTH_SHORT).show();
         }
     }
 

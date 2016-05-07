@@ -1,9 +1,6 @@
-package esi.dz.bookfragments;
-
-import android.graphics.Bitmap;
+package dz.esi.bookfragments.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 
 public class Book implements Serializable{

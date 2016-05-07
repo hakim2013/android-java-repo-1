@@ -1,4 +1,4 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,6 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 
+import dz.esi.bookfragments.R;
+import dz.esi.bookfragments.model.Author;
+import dz.esi.bookfragments.model.Book;
+import dz.esi.bookfragments.util.UtilService;
 
 
 public class CustomAdapter extends BaseAdapter  {
@@ -48,7 +52,7 @@ public class CustomAdapter extends BaseAdapter  {
         TextView textTitle = (TextView) convertView.findViewById(R.id.title);
         TextView textAuthors = (TextView) convertView.findViewById(R.id.authors);
         TextView textEditor = (TextView) convertView.findViewById(R.id.editor);
-        coverIcon.setImageBitmap(getImageByte(bookList.get(position).getIconCover()));
+        coverIcon.setImageBitmap(new UtilService().getImageByte(bookList.get(position).getIconCover()));
         textTitle.setText(bookList.get(position).getTitle());
         // Récupérer la liste des auteurs
         Author[] bookAuthors = bookList.get(position).getListAuthors();
@@ -64,11 +68,6 @@ public class CustomAdapter extends BaseAdapter  {
         return convertView;
     }
 
-    public Bitmap getImageByte(String  image) {
-        byte[] imgbytes = Base64.decode(image, Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
-                imgbytes.length);
-        return bitmap;
-    }
+
 
 }

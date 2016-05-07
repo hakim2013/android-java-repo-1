@@ -1,19 +1,16 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.activity;
 
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import dz.esi.bookfragments.R;
+import dz.esi.bookfragments.fragment.DetailFragment;
+import dz.esi.bookfragments.model.Book;
 
 public class MainActivity extends AppCompatActivity {
      ListView listView;

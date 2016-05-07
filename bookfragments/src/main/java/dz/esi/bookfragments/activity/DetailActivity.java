@@ -1,10 +1,12 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.activity;
 
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import dz.esi.bookfragments.R;
+import dz.esi.bookfragments.fragment.DetailFragment;
+import dz.esi.bookfragments.model.Book;
 
 public class DetailActivity extends AppCompatActivity {
 

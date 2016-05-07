@@ -1,18 +1,16 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import dz.esi.bookfragments.R;
+import dz.esi.bookfragments.service.GetBookTask;
+import dz.esi.bookfragments.util.UtilService;
 
 
 public class MainFragment extends Fragment {
@@ -20,7 +18,13 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.main_fragment,null);
-        new GetBookTask(getActivity()).execute(getScreenDensity());
+        // tester si le dispositif est connecté
+        if(new UtilService().checkNetwork(getActivity())) {
+            new GetBookTask(getActivity()).execute(getScreenDensity());
+        }
+        else {
+            Toast.makeText(getActivity(),"Pas de connexion", Toast.LENGTH_SHORT).show();
+        }
         return v;
     }
 

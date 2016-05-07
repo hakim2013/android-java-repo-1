@@ -1,27 +1,26 @@
-package esi.dz.bookfragments;
+package dz.esi.bookfragments.fragment;
 
 import android.app.Fragment;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import dz.esi.bookfragments.R;
+import dz.esi.bookfragments.model.Author;
+import dz.esi.bookfragments.model.Book;
+import dz.esi.bookfragments.util.UtilService;
+
 
 public class DetailFragment extends Fragment {
 
 
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.detail_fragment,null);
+        View v = inflater.inflate(R.layout.detail_fragment, null);
         Bundle bundle = getArguments();
         if (bundle != null) {
             Book book = (Book) bundle.getSerializable("book");
@@ -32,7 +31,7 @@ public class DetailFragment extends Fragment {
             TextView textEditor = (TextView) v.findViewById(R.id.editorText);
             TextView textAuthor = (TextView) v.findViewById(R.id.textAuthor);
             ((TextView) v.findViewById(R.id.textView)).setVisibility(v.VISIBLE);
-            coverImage.setImageBitmap(getImageByte(book.getCover()));
+            coverImage.setImageBitmap(new UtilService().getImageByte(book.getCover()));
             textSummary.setText(book.getSummary());
             textTitle.setText("Titre: "+book.getTitle());
             textYear.setText("Année d'édition: "+book.getYear());
@@ -51,10 +50,5 @@ public class DetailFragment extends Fragment {
         return v;
     }
 
-    public Bitmap getImageByte(String  image) {
-        byte[] imgbytes = Base64.decode(image, Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imgbytes, 0,
-                imgbytes.length);
-        return bitmap;
-    }
+
 }
