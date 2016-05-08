@@ -31,6 +31,7 @@ public class DetailFragment extends Fragment {
             TextView textEditor = (TextView) v.findViewById(R.id.editorText);
             TextView textAuthor = (TextView) v.findViewById(R.id.textAuthor);
             ((TextView) v.findViewById(R.id.textView)).setVisibility(v.VISIBLE);
+            // convertir en bitmap
             coverImage.setImageBitmap(new UtilService().getImageByte(book.getCover()));
             textSummary.setText(book.getSummary());
             textTitle.setText("Titre: "+book.getTitle());

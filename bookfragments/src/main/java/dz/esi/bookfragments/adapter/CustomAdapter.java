@@ -44,7 +44,7 @@ public class CustomAdapter extends BaseAdapter  {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // mettre le layout une seule fois lorsque convertView est null
+
         if (convertView == null) {
             convertView = parent.inflate(context, R.layout.list_items, null);
         }
@@ -52,6 +52,7 @@ public class CustomAdapter extends BaseAdapter  {
         TextView textTitle = (TextView) convertView.findViewById(R.id.title);
         TextView textAuthors = (TextView) convertView.findViewById(R.id.authors);
         TextView textEditor = (TextView) convertView.findViewById(R.id.editor);
+        // convertir en bitmap
         coverIcon.setImageBitmap(new UtilService().getImageByte(bookList.get(position).getIconCover()));
         textTitle.setText(bookList.get(position).getTitle());
         // Récupérer la liste des auteurs
