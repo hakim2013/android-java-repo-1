@@ -49,7 +49,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
         StringBuilder result = new StringBuilder();
         String data;
         try {
-            URL url = new URL("http://192.168.1.4:8080/getbooks?density="+params[0]);
+            URL url = new URL("http://10.0.2.2:8080/getbooks?density="+params[0]);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             // Attendre 5 secondes max pour établir la connexion
             conn.setConnectTimeout(5000);

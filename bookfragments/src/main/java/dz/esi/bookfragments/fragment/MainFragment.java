@@ -19,12 +19,12 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.main_fragment,null);
         // tester si le dispositif est connecté
-        // ne pas effecuter ce test si le serveur est connecté au point d'acces du dispositif
+        // ne pas effecuter ce test si le serveur est connecté au point d'accès du dispositif
         if(new UtilService().checkNetwork(getActivity())) {
             new GetBookTask(getActivity()).execute(getScreenDensity());
         }
         else {
-            Toast.makeText(getActivity(),"Pas de connexion", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),"Aucune connexion", Toast.LENGTH_SHORT).show();
         }
         return v;
     }
