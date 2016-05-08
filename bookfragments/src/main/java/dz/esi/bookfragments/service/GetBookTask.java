@@ -38,6 +38,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPreExecute() {
+        // Création et affichage du ProgressDialog
         pd = new ProgressDialog(context);
         pd.setTitle("Please Wait..");
         pd.setMessage("Loading...");
@@ -100,7 +101,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
             listView.setAdapter(cutomAdapter);
         }
         else {
-            Toast.makeText(context, "une erreur s'est produite", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
         }
     }
 
