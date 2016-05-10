@@ -19,6 +19,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import dz.esi.bookfragments.R;
@@ -50,7 +51,7 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
         StringBuilder result = new StringBuilder();
         String data;
         try {
-            URL url = new URL("http://10.0.2.2:8080/getbooks?density="+params[0]);
+            URL url = new URL("http://192.168.1.6:8080/getbooks?density="+params[0]);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             // Attendre 5 secondes max pour établir la connexion
             conn.setConnectTimeout(5000);
@@ -74,7 +75,9 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
       pd.dismiss();
         if (!s.equals("")) {
             List<Book> listBook = new ArrayList<>();
-
+            Book[] books = new Gson().fromJson(s,Book[].class);
+            listBook = Arrays.asList(books);
+/*
             try {
                 JSONArray jsonArray = new JSONArray(s);
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -94,11 +97,12 @@ public class GetBookTask extends AsyncTask<String,Void,String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
-            ListView listView = (ListView) ((Activity)context).findViewById(R.id.listView);
-            CustomAdapter cutomAdapter = new CustomAdapter(context,listBook);
-            listView.setAdapter(cutomAdapter);
+            */
+            ListView listView =
+                    (ListView) ((Activity)context).findViewById(R.id.listView);
+            CustomAdapter customAdapter =
+            new CustomAdapter(context,listBook);
+            listView.setAdapter(customAdapter);
         }
         else {
             Toast.makeText(context, "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
