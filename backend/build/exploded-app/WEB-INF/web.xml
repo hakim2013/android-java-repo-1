@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+    <servlet>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>com.example.pc.myapplication.backend.MyServlet</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>MyServlet1</servlet-name>
+        <servlet-class>com.example.pc.myapplication.backend.getBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet1</servlet-name>
+        <url-pattern>/getbooks</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>MyServlet2</servlet-name>
+        <servlet-class>com.example.pc.myapplication.backend.AddbookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet2</servlet-name>
+        <url-pattern>/addbook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyServlet3</servlet-name>
+<servlet-class>
+ com.example.pc.myapplication.backend.AddBooksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet3</servlet-name>
+        <url-pattern>/addbooks</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+</web-app>
